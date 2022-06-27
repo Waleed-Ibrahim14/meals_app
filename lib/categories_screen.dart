@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class CategoriesScreen extends StatelessWidget{
-
-@override
-  Widget build(BuildContext context){
-    return Container(
-
+class CategoriesScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GridView(
+      children: const <Widget>[
+        
+      ],
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+      ),
     );
   }
-} 
+}
