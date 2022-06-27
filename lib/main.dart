@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           subtitle1: const TextStyle(
             fontFamily: 'RobotoCondensed',
             fontSize: 20,
+            fontWeight: FontWeight.bold,
             ),
         ),
       ),
