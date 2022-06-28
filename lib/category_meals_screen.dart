@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
+static const routeName = '/category-meals';
 //   final String categoryId;
 //   final String categoryTitle;
 //  const CategoryMealsScreen(this.categoryId,this.categoryTitle,{Key? key}) : super(key: key);

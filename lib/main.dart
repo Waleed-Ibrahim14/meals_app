@@ -31,10 +31,12 @@ class MyApp extends StatelessWidget {
             ),
         ),
       ),
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
+      initialRoute: '/',
       //The application's top-level routing table.
       routes: {
-        '/category-rout': (ctx) => CategoryMealsScreen(),
+        '/': (ctx) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
       },
     );
   }
