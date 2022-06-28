@@ -94,7 +94,7 @@ const DUMMY_MEALS =  [
   Meal(
     id: 'm2',
     categories: [
-      'c2',
+      'c3',
     ],
     title: 'Toast Hawaii',
     affordability: Affordability.Affordable,
