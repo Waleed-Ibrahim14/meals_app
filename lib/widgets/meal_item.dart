@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../screens/meal_detail_screen.dart';
 import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -9,6 +11,7 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   const MealItem({
+    required this.id,
     required this.title,
     required this.imageUrl,
     required this.duration,
@@ -17,48 +20,49 @@ class MealItem extends StatelessWidget {
   });
 
   String get complexityText {
-    switch(complexity){
+    switch (complexity) {
       case Complexity.Simple:
-      return 'Simple';
-      break;
+        return 'Simple';
+        break;
       case Complexity.Challenging:
-      return 'Chalinging';
-      break;
+        return 'Chalinging';
+        break;
       case Complexity.Hard:
-      return 'Hard';
-      break;
+        return 'Hard';
+        break;
       default:
-      return 'unknown';
+        return 'unknown';
     }
   }
 
-    String get affordabilityText {
-    switch(affordability){
+  String get affordabilityText {
+    switch (affordability) {
       case Affordability.Affordable:
-      return 'Affordable';
-      break;
+        return 'Affordable';
+        break;
       case Affordability.Pricey:
-      return 'Pricey';
-      break;
+        return 'Pricey';
+        break;
       case Affordability.Luxurious:
-      return 'Expensive';
-      break;
+        return 'Expensive';
+        break;
       default:
-      return 'unknown';
-
+        return 'unknown';
     }
   }
 
-
-
-
-  void selectMeal() {}
+  void selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      MealDetailScreen.routeName,
+      arguments: id,
+    );
+  }
 
 //here list of meal item ,for selected category.
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -107,7 +111,7 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(
-                mainAxisAlignment:  MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Expanded(
                     child: Row(
