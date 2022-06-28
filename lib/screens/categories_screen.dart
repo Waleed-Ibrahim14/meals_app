@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../dummy_data.dart';
 import '../widgets/category_item.dart';
 
+//this is a Categories Screen .
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
