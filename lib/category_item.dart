@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import './category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final color;
 
-  CategoryItem(this.title, this.color);
+  const CategoryItem(this.id, this.title, this.color, {Key? key}): super(key: key);
 
+// this method for reouting bettween pages .
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return const CategoryMealsScreen();
-        },
-      ),
+    Navigator.of(ctx).pushNamed(
+      '/category-rout',
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      //onTap: when you tap t one category it's take you to category_meals_screen page.
       onTap: () => selectCategory(context),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
