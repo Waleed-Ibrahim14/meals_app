@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/dummy_data.dart';
-//this screen for show the details of selected meal.
+//?this screen for show the details of selected meal.
 class MealDetailScreen extends StatelessWidget {
   const MealDetailScreen({Key? key}) : super(key: key);
   static const routeName = '/meal-detail';
